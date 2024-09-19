@@ -1,0 +1,13 @@
+Para atualizar o tko, abra o shell e digite
+
+    update.sh
+
+Para interagir com os repositórios, abra o shell e digite
+
+    tko play <repositório>
+
+Exemplos:
+
+    tko play fup
+    tko play poo
+    tko play ed

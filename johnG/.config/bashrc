@@ -1,0 +1,26 @@
+################    BASIC    ########################
+# atualizando tko e scripts uma vez por dia
+export PS1="\033[1;35m\w\[\033[00m\]\$ "
+
+# atualizando tko e scripts uma vez por dia
+/home/runner/${REPL_SLUG}/.bin/update.sh --check
+
+# adicionando .bin no path
+export PATH="/home/runner/${REPL_SLUG}/.bin:${PATH}"
+################    ALIAS    ########################
+config_file="/home/runner/${REPL_SLUG}/.bin/tko.cfg"
+alias tko="tko -c ${config_file}"
+tko config --root . > /dev/null 2>&1
+alias play="tko play"
+alias run="tko run"
+################    MENSAGEM    ########################
+
+echo "Para atualizar manualmente o tko, digite: update.sh"
+echo "Para interagir com os repositórios user : tko play [fup|ed|poo]"
+
+#######    Carregando configurações do usuário    ######
+user_bashrc="/home/runner/${REPL_SLUG}/.bashrc"
+
+if [ -f "${user_bashrc}" ]; then
+    source ${user_bashrc}
+fi
